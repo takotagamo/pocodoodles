@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <script src="js/enchant.min.js"></script>
+    <script src="js/pocodoodles-enchantjs.loader.js"></script>
+    <script>
+        const fileName = "scenes/scenes.json";
+        const width = 640;
+        const height = 480;
+
+        window.addEventListener("load", () => {
+            fetch(fileName)
+            .then(data => data.json())
+            .then(script => main(script))
+        });
+
+        function main(script) {
+            enchant();
+
+            const game = new Game(width, height);
+
+            pocodoodles.game = game;
+
+            pocodoodles.load(script)
+            .then(scenes => {
+                game.pushScene(scenes["start"]);
+            });
+
+            game.start();
+        }
+    </script>
+</head>

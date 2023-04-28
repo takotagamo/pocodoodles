@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="module">
+        import { pocodoodles } from "./js/pocodoodles-tinengine.loader.es6";
+
+        function main(script) {
+            pocodoodles.init(640, 480);
+            
+            pocodoodles.loadScenes(script)
+            .then(() => pocodoodles.run());
+        }
+
+        window.addEventListener("load", () => {
+            fetch("scenes/scenes.json")
+            .then(data => data.json())
+            .then(script => main(script));
+        });
+    </script>
+</head>
+<body>
+    <canvas id="gameframe" width="640" height="480"></canvas>
+</body>
+
+</html>

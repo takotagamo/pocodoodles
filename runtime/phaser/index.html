@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./js/phaser.min.js"></script>
+        <script src="./scenes/scenes.js"></script>
+        <script>
+            window.addEventListener("load", () => {
+                let cv = document.getElementById("cv");
+                new Phaser.Game({
+                    type: Phaser.CANVAS,
+                    canvas: cv,
+                    width: cv.width,
+                    height: cv.height,
+                    input: {
+                        mouse: true,
+                        touch: true
+                    },
+                    scene: scenes
+                });
+            });
+        </script>        
+    </head>
+    <body>
+        <canvas id="cv" width="640" height="480"></canvas>
+    </body>
+</html>

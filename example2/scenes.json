@@ -1,0 +1,48 @@
+[
+    {
+        "targets": [ "canvas" ],
+        "name": "start",
+        "bg": "bg.png",
+        "images": [
+            { "x": 230, "y": 155, "image": "human.png" }
+        ],
+        "buttons": [
+            { "x": 68, "y": 111, "image": "cup.png", "next": "no_cup" },
+            { "x": 430, "y": 104, "image": "stone.png", "next": "no_stone" }
+        ]
+    },
+    {
+        "name": "no_cup",
+        "bg": "bg.png",
+        "images": [
+            { "x": 230, "y": 155, "image": "human2.png" },
+            { "x": 118, "y": 314, "image": "cup2.png" }
+        ],
+        "buttons": [
+            { "x": 430, "y": 104, "image": "stone.png", "next": "no_cupstone" }
+        ]
+    },
+    {
+        "name": "no_stone",
+        "bg": "bg.png",
+        "images": [
+            { "x": 230, "y": 155, "image": "human2.png" },
+            { "x": 380, "y": 284, "image": "stone2.png" }
+        ],
+        "buttons": [
+            { "x": 68, "y": 111, "image": "cup.png", "next": "no_cupstone" }
+        ]
+    },
+    {
+        "name": "no_cupstone",
+        "bg": "bg.png",
+        "images": [
+            { "x": 230, "y": 155, "image": "human2.png" },
+            { "x": 118, "y": 314, "image": "cup2.png" },
+            { "x": 380, "y": 284, "image": "stone2.png" }
+        ],
+        "buttons": [
+            { "x": 0, "y": 0, "w": 649, "h": 480, "next": "start" }
+        ]
+    }
+]

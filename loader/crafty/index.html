@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="js/crafty-min.js"></script>
+        <script src="js/pocodoodles-crafty.loader.js"></script>
+        <script>
+            window.addEventListener("load", main);
+
+            function main() {
+                Crafty.init(640, 480, "cr-stage");
+
+                pocodoodles.load("scenes/scenes.json")
+                    .then(() => Crafty.scene("start"));
+            }
+        </script>
+    </head>
+    <body>
+        <div id="cr-stage" width="640px" height="480px"></div>
+    </body>
+</html>

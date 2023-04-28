@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/melonjs.min.js"></script>
+    <script src="js/pocodoodles-melonjs.loader.js"></script>
+    <script>
+        me.device.onReady(() => {
+            me.video.init(640, 480, {
+                parent: "screen",
+                scale: "auto",
+                renderer: me.CANVAS
+            });
+
+            me.loader.setBaseURL("image", "image/");
+
+            pocodoodles.setBaseURL("");
+            pocodoodles.start("scenes/scenes.json");
+        });
+    </script>
+</head>
+<body>
+    <div id="screen" width="640" height="480"></div>
+</body>
+
+</html>

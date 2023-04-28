@@ -1,0 +1,19 @@
+<html>
+<head>
+        <meta charset="utf-8">
+        <!-- 201009 -->
+        <script type="text/javascript" src="js/pocodoodles.js"></script>
+        <script type="text/javascript">
+            window.addEventListener("load", () => {
+                fetch("scenes/scenes.json")
+                .then(data => data.json())
+                .then(scenes => Main.main(scenes));
+            })
+        </script>
+</head>
+<body>
+    <canvas id="cv_main" width="480px" height="480px"></canvas>
+
+    <input type="button" id="btn_halt" value="stop" />
+</body>
+</html>

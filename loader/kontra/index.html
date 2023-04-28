@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="js/kontra.js"></script>
+        <script src="js/pocodoodles-kontra.loader.js"></script>
+        <script>
+            const clickadv = pocodoodles;
+
+            window.addEventListener("load", async () => {
+                kontra.init("canvas_main");
+                kontra.initPointer();
+
+                const result = await clickadv.start("scenes/scenes.json")
+
+                console.log(result);
+            });
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas_main" width="640px" height="480px"></canvas>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+{
+    "title": "pocodoodles (version 2023-04-28)",
+    "description": "DSL for portable point & click-adventure",
+    "oneOf": [
+        { "ref": "#/definitions/Scene" },
+        { "type": "array",
+            "items": { "$ref": "#/definitions/Scene" }
+        }
+    ],
+
+    "definitions": {
+        "Scene": {
+            "description": "clickable-map scene",
+            "type": "object",
+            "properties": {
+                "name": { "type": "string" },
+                "bg": { "type": "string" },
+                "images": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/Image" }
+                },
+                "buttons": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            { "$ref": "#/definitions/Button" },
+                            { "$ref": "#/definitions/ImageButton" }
+                        ]
+                    }
+                }
+            },
+            "required": [ "name", "bg" ]
+        },
+        "Button": {
+            "description": "invisible button",
+            "type": "object",
+            "properties": {
+                "x": { "type": "integer" },
+                "y": { "type": "integer" },
+                "w": { "type": "integer" },
+                "h": { "type": "integer" },
+                "next": { "type": "string" }
+            },
+            "required": [ "x", "y", "w", "h", "next" ]
+        },
+        "ImageButton": {
+            "description": "button with image",
+            "type": "object",
+            "properties": {
+                "image": { "type": "string" },
+                "x": { "type": "integer" },
+                "y": { "type": "integer" },
+                "next": { "type": "string" }
+            },
+            "required": [ "image", "x", "y", "next" ]
+        },
+        "Image": {
+            "description": "image",
+            "type": "object",
+            "properties": {
+                "image": { "type": "string" },
+                "x": { "type": "integer" },
+                "y": { "type": "integer" }
+            },
+            "required": [ "image", "x", "y" ]
+        }
+    }
+}

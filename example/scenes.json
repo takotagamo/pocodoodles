@@ -1,0 +1,63 @@
+[
+    {
+        "targets": [ "map", "canvas", "hsp", "krkr", "tyrano", "nscr", "form", "msdos" ],
+        "name": "start",
+        "bg": "house.png",
+        "buttons": [
+            { "x": 280, "y": 220, "w": 70, "h": 100, "next": "door" }
+        ]
+    },
+    {
+        "name": "door",
+        "bg": "olddoor.png",
+        "buttons": [
+            { "x": 200, "y": 40, "w": 230, "h": 340, "next": "workdesk" },
+            { "x": 0, "y": 380, "w": 640, "h": 100, "next": "start" }
+        ]
+    },
+    {
+        "name": "workdesk",
+        "bg": "workdesk.png",
+        "buttons": [
+            { "x": 20, "y": 60, "w": 130, "h": 130, "next": "workdesk_safe" },
+            { "x": 0, "y": 200, "w": 640, "h": 280, "next": "dead" }
+        ]
+    },
+    {
+        "name": "workdesk_safe",
+        "bg": "workdesk.png",
+        "buttons": [
+            { "x": 0, "y": 200, "w": 640, "h": 280, "next": "door_safe" }
+        ]
+    },
+    {
+        "name": "door_safe",
+        "bg": "olddoor.png",
+        "buttons": [
+            { "x": 200, "y": 40, "w": 230, "h": 340, "next": "dead" },
+            { "x": 0, "y": 380, "w": 640, "h": 100, "next": "start_safe" }
+        ]
+    },
+    {
+        "name": "start_safe",
+        "bg": "house.png",
+        "buttons": [
+            { "x": 280, "y": 220, "w": 70, "h": 100, "next": "dead" },
+            { "x": 0, "y": 330, "w": 640, "h": 150, "next": "food" }
+        ]
+    },
+    {
+        "name": "food",
+        "bg": "dish.png",
+        "buttons": [
+            { "x": 0, "y": 0, "w": 640, "h": 480, "next": "start", "file": "scenes" }
+        ]
+    },
+    {
+        "name": "dead",
+        "bg": "cat.png",
+        "buttons": [
+            { "x": 0, "y": 0, "w": 640, "h": 480, "next": "start" }
+        ]
+    }
+]
